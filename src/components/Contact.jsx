@@ -24,9 +24,19 @@ export default function Contact() {
       return;
     }
     setStatus('sending');
-    await new Promise((r) => setTimeout(r, 1500));
+    
+    // Construct the mailto URL to send messages to srujanpoojari2@gmail.com
+    const subjectLine = formData.subject ? `[Portfolio Contact] ${formData.subject}` : '[Portfolio Contact] Inquiry';
+    const bodyContent = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const mailtoUrl = `mailto:srujanpoojari2@gmail.com?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(bodyContent)}`;
+    
+    // Delay slightly for visual feedback before opening email client
+    await new Promise((r) => setTimeout(r, 600));
+    
+    window.location.href = mailtoUrl;
+    
     setStatus('success');
-    showToast('Thank you! Your message has been received.');
+    showToast('Opening your mail client...');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
