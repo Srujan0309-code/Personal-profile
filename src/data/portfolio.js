@@ -2,7 +2,7 @@ import {
   Terminal, Layout, Server, Database, Sparkles, Wrench,
   Activity, HeartPulse, Flame, FileText, Camera,
   Rocket, HeartHandshake, ScanEye, Layers, Lightbulb, Award,
-  Mail, Trophy, BookOpen
+  Mail, Trophy, BookOpen, Phone
 } from 'lucide-react';
 import { Github, Linkedin } from '../components/Icons';
 
@@ -301,6 +301,13 @@ export const contactLinks = [
     label: 'LinkedIn',
     value: 'linkedin.com/in/srujan-poojari-705779327',
     href: 'https://www.linkedin.com/in/srujan-poojari-705779327/',
+  },
+  {
+    id: 'phone',
+    icon: Phone,
+    label: 'Phone',
+    value: '+91 6361319241',
+    href: 'tel:+916361319241',
   },
 ];
 
