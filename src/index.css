@@ -1,0 +1,322 @@
+/* ============================================
+   Design System — Srujan Poojari Portfolio
+   Zajno Motion Aesthetic — Monochrome Dark
+   ============================================ */
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* Monochrome Palette */
+  --black: #050505;
+  --off-black: #0e0e0e;
+  --dark-gray: #1a1a1a;
+  --mid-gray: #2e2e2e;
+  --gray: #555555;
+  --light-gray: #aaaaaa;
+  --off-white: #e8e8e8;
+  --white: #ffffff;
+
+  /* Accent — kept minimal, white tones only */
+  --accent-line: rgba(255,255,255,0.12);
+  --accent-line-bright: rgba(255,255,255,0.5);
+  --accent-rose: #f43f5e;
+  --accent-emerald: #10b981;
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 350ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+
+  /* Z-Index Scale */
+  --z-cursor: 9999;
+  --z-preloader: 9998;
+  --z-nav: 1000;
+  --z-overlay: 100;
+  --z-toast: 5000;
+
+  /* Semantic theme tokens (Zajno dark-first) */
+  --bg-primary: var(--black);
+  --bg-secondary: var(--off-black);
+  --bg-tertiary: var(--dark-gray);
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-card-hover: rgba(255,255,255,0.08);
+  --bg-nav: rgba(5,5,5,0.85);
+  --text-primary: var(--white);
+  --text-secondary: var(--light-gray);
+  --text-tertiary: var(--gray);
+  --text-inverse: var(--black);
+  --border-color: rgba(255,255,255,0.1);
+  --border-color-bright: rgba(255,255,255,0.3);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.6);
+
+  /* Legacy compat aliases (used in some components) */
+  --primary-50: #eff6ff;
+  --primary-300: #93c5fd;
+  --primary-400: #60a5fa;
+  --primary-500: #ffffff;
+  --primary-600: #e8e8e8;
+  --primary-800: #555555;
+  --neutral-300: #555;
+  --neutral-400: #aaa;
+  --neutral-700: #333;
+  --neutral-950: #000;
+}
+
+/* No separate light/dark theme blocks — design is monochrome dark-first */
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color var(--duration-slow) var(--ease-in-out),
+              color var(--duration-slow) var(--ease-in-out);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-fast) var(--ease-in-out);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+::selection {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* ============================================
+   Layout Utilities
+   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.section {
+  padding: var(--space-5xl) 0;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--bg-secondary);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.8rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.01em;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--duration-fast);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-primary {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--white);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-outline:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mid-gray);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--off-white);
+}
+
+/* ============================================
+   Toast
+   ============================================ */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: var(--space-md) var(--space-xl);
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--primary-400);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-toast);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: var(--space-4xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* ============================================
+   Print
+   ============================================ */
+@media print {
+  .navbar, .preloader, .cursor-follower, .cursor-dot {
+    display: none !important;
+  }
+  .section {
+    page-break-inside: avoid;
+  }
+}
+
+/* Tactile film grain noise overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9999;
+}
+
