@@ -285,8 +285,8 @@ export const contactLinks = [
     id: 'email',
     icon: Mail,
     label: 'Email',
-    value: 'srujanpoojari309@gmail.com',
-    href: 'mailto:srujanpoojari309@gmail.com',
+    value: 'srujanpoojari2@gmail.com',
+    href: 'mailto:srujanpoojari2@gmail.com',
   },
   {
     id: 'github',
