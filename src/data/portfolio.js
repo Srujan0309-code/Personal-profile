@@ -81,7 +81,7 @@ export const projects = [
     icon: HeartPulse,
     image: 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3o3dGtzanJyZmlwamUxbkcmZXA9IdkxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKSjRrfIPjei1nG/giphy.gif',
     tech: ['MERN Stack', 'Gemini API', 'AI Chatbot', 'MongoDB'],
-    github: 'https://github.com/Srujan0309',
+    github: 'https://github.com/Srujan0309-code',
     live: '#',
   },
   {
@@ -92,7 +92,7 @@ export const projects = [
     icon: Activity,
     image: 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDM3OGMwNHhiVUZBOHA5a0kmZXA9IdkxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l378c04xbUFA9p9kI/giphy.gif',
     tech: ['Next.js', 'Firebase', 'Gemini AI', 'LLM'],
-    github: 'https://github.com/Srujan0309',
+    github: 'https://github.com/Srujan0309-code',
     live: '#',
   },
   {
@@ -103,7 +103,7 @@ export const projects = [
     icon: FileText,
     image: 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM380VTk0MjFPT1dkVk1UODQmZXA9IdkxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o84U6421OOWdVMT84/giphy.gif',
     tech: ['Gemini API', 'Groq API', 'Next.js', 'AI'],
-    github: 'https://github.com/Srujan0309',
+    github: 'https://github.com/Srujan0309-code',
     live: '#',
   },
   {
@@ -114,7 +114,7 @@ export const projects = [
     icon: Camera,
     image: 'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM383MkY4dDlURGkyeFZueE9FJmVwPUg1eF9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o72F8t9TDi2xVnxOE/giphy.gif',
     tech: ['YOLO', 'Computer Vision', 'Python', 'Object Detection'],
-    github: 'https://github.com/Srujan0309',
+    github: 'https://github.com/Srujan0309-code',
     live: '#',
   },
 ];
@@ -292,15 +292,15 @@ export const contactLinks = [
     id: 'github',
     icon: Github,
     label: 'GitHub',
-    value: 'github.com/Srujan0309',
-    href: 'https://github.com/Srujan0309',
+    value: 'github.com/Srujan0309-code',
+    href: 'https://github.com/Srujan0309-code',
   },
   {
     id: 'linkedin',
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/srujan-poojari',
-    href: 'https://linkedin.com/in/srujan-poojari',
+    value: 'linkedin.com/in/srujan-poojari-705779327',
+    href: 'https://www.linkedin.com/in/srujan-poojari-705779327/',
   },
 ];
 
